@@ -3,20 +3,18 @@ services:
   postgres:
     image: postgres
     environment:
-      POSTGRES_USER: #dbuser
+      POSTGRES_USER: #dbuse
       POSTGRES_PASSWORD: #dbpassword
-      POSTGRES_DB: #dbname
+      POSTGRES_DB: #db
     ports: 
       - 5432:5432
   mongo:
     image: mongo
     environment:
-      MONGO_INITDB_DATABASE: gobarber
+      MONGO_INITDB_DATABASE: #mongodb
     ports: 
       - 27017:27017
   redis:
-    image: bitnami/redis:latest
-    environment:
-      - ALLOW_EMPTY_PASSWORD=yes
+    image: redis:alpine
     ports:
       - 6379:6379
