@@ -1,0 +1,22 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: #dbuser
+      POSTGRES_PASSWORD: #dbpassword
+      POSTGRES_DB: #dbname
+    ports: 
+      - 5432:5432
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: gobarber
+    ports: 
+      - 27017:27017
+  redis:
+    image: bitnami/redis:latest
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 6379:6379
